@@ -263,7 +263,7 @@ class VictoriaLogsTaskHandler(OpensearchTaskHandler):
         :return: URL to the external log collection service
         """
         log_id = self._render_log_id(task_instance, try_number)
-        return self.frontend.format(query=quote(self.query.format(log_id=log_id)))
+        return self.frontend.format(query=quote(self.query.format(log_id=log_id, offset=0)))
 
     @property
     def supports_external_link(self) -> bool:
